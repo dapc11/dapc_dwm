@@ -34,7 +34,7 @@ static Sp scratchpads[] = {
 
 
 /* tagging */
-static const char *tags[] = { "1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 " };
+static char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -45,6 +45,8 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       2,            0,           -1 },
 	{ "Google-chrome",  NULL, NULL,       2,            0,           -1 },
+	{ "Microsoft Teams - Preview",  NULL, NULL,       2,            0,           0 },
+	{ "Evolution",  NULL, NULL,       1,            0,           0 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
 };
@@ -76,7 +78,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[]  = { "google-chrome", NULL };
+static const char *browsercmd[]  = { "firefox", NULL };
 static const char *mutevol[] = {"pactl", "set-sink-mute", "0", "toggle" };
 static const char *downvol[] = {"pactl", "--", "set-sink-volume", "0", "-10%" };
 static const char *upvol[] = {"pactl", "--", "set-sink-volume", "0", "+10%" };

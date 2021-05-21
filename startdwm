@@ -21,5 +21,4 @@ do
     new_csum=$(sha1sum $(which dwm))
     echo "Calculating new checksum for $(which dwm): ${new_csum} (old: ${csum})"
     sleep 0.5
-done
 } > $logfile

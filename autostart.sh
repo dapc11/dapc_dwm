@@ -14,7 +14,7 @@ function __date {
 }
 
 function __wifi {
-    nmcli dev wifi | grep -E '^[*]' | awk -v q=' ' '{ print $3q$9}'
+    nmcli dev wifi | grep -E '^[*]' | awk -v q=' ' '{ print $2q$8}'
 }
 function __now_playing {
     if [ ! "$(now_playing)" -eq "" ]; then
@@ -22,7 +22,7 @@ function __now_playing {
     fi
 }
 
-nitrogen --set-auto ~/.local/share/dwm/atom.jpg &
+nitrogen --restore &
 dunst -config ~/.config/dunst/dunstrc &
 xrdb ~/.Xresources &
 

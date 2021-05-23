@@ -25,6 +25,7 @@ function __now_playing {
 nitrogen --restore &
 dunst -config ~/.config/dunst/dunstrc &
 xrdb ~/.Xresources &
+redshift &
 
 # Statusbar
 while true; do
